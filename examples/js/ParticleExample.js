@@ -116,7 +116,7 @@
                 // bg is a 1px by 1px image
                 this.bg.scale.x = canvas.width;
                 this.bg.scale.y = canvas.height;
-                this.bg.tint = 0xffffff;
+                this.bg.tint = 0x000000;
                 this.stage.addChild(this.bg);
                 // collect the textures, now that they are all loaded
                 let art;
