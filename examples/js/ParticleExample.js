@@ -250,4 +250,5 @@
 
     // Assign to global space
     window.ParticleExample = ParticleExample;
+    window.PartEx = this;
 })(window);
