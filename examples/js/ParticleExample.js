@@ -22,6 +22,7 @@
                 width: canvas.width,
                 height: canvas.height,
                 view: canvas,
+                transparent: true,
             };
             /* var preMultAlpha = !!options.preMultAlpha;
             if(rendererOptions.transparent && !preMultAlpha)
