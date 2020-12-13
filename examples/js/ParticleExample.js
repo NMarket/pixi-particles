@@ -226,7 +226,7 @@
                 });
 
                 // Start the update
-//                 update();
+                update();
 
                 // for testing and debugging
                 window.destroyEmitter = () =>
