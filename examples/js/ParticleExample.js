@@ -67,9 +67,6 @@
                     this.updateHook(now - elapsed);
                 }
 
-                framerate.innerHTML = `${(1000 / (now - elapsed)).toFixed(2)} fps`;
-
-                elapsed = now;
 
                 if (this.emitter && particleCount)
                 {
@@ -81,11 +78,17 @@
 
                 if(elapsed2 > fpsInterval) {
                     then = now2 - (elapsed2 % fpsInterval);
+                    
+                    framerate.innerHTML = `${(1000 / (now - elapsed)).toFixed(2)} fps`;
+                    
                     if(parseInt(this.emitter.particleCount) > 0){
                         // render the stage
                         this.renderer.render(this.stage);
                     }
                 }
+                
+                elapsed = now;
+                
             };
 
             // Resize the canvas to the size of the window
