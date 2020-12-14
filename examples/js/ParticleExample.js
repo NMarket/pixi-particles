@@ -33,6 +33,9 @@
             this.bg = null;
             this.updateHook = null;
             this.containerHook = null;
+            this.then = Date.now();
+            this.fps = 30;
+            this.fpsInterval = 1000 / fps;
 
             const framerate = document.getElementById('framerate');
             const particleCount = document.getElementById('particleCount');
@@ -70,9 +73,15 @@
                     particleCount.innerHTML = `${this.emitter.particleCount} particles`;
                 }
                 
-                if(parseInt(this.emitter.particleCount) > 0){
-                    // render the stage
-                    this.renderer.render(this.stage);
+                var now = Date.now(),
+                    elapsed = now - then;
+
+                if(elapsed > fpsInterval) {
+                    then = now - (elapsed % fpsInterval);
+                    if(parseInt(this.emitter.particleCount) > 0){
+                        // render the stage
+                        this.renderer.render(this.stage);
+                    }
                 }
             };
 
