@@ -70,11 +70,9 @@
                     particleCount.innerHTML = `${this.emitter.particleCount} particles`;
                 }
                 
-                if(parseInt(this.emitter.particleCount) == 0){
+                if(parseInt(this.emitter.particleCount) > 0){
                     // render the stage
                     this.renderer.render(this.stage);
-                } else {
-                    //hmmm
                 }
             };
 
