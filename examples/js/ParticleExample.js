@@ -69,9 +69,13 @@
                 {
                     particleCount.innerHTML = `${this.emitter.particleCount} particles`;
                 }
-
-                // render the stage
-                this.renderer.render(this.stage);
+                
+                if(parseInt(this.emitter.particleCount) == 0){
+                    // render the stage
+                    this.renderer.render(this.stage);
+                } else {
+                    //hmmm
+                }
             };
 
             // Resize the canvas to the size of the window
