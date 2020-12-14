@@ -33,9 +33,12 @@
             this.bg = null;
             this.updateHook = null;
             this.containerHook = null;
-            this.then = Date.now();
-            this.fps = 30;
-            this.fpsInterval = 1000 / fps;
+            
+            let then = Date.now();
+            let fps = 30;
+            let fpsInterval = 1000 / fps;
+            // Calculate the current time
+            let elapsed2 = Date.now();
 
             const framerate = document.getElementById('framerate');
             const particleCount = document.getElementById('particleCount');
@@ -73,11 +76,11 @@
                     particleCount.innerHTML = `${this.emitter.particleCount} particles`;
                 }
                 
-                var now = Date.now(),
-                    elapsed = now - then;
+                var now2 = Date.now(),
+                    elapsed2 = now2 - then;
 
-                if(elapsed > fpsInterval) {
-                    then = now - (elapsed % fpsInterval);
+                if(elapsed2 > fpsInterval) {
+                    then = now2 - (elapsed2 % fpsInterval);
                     if(parseInt(this.emitter.particleCount) > 0){
                         // render the stage
                         this.renderer.render(this.stage);
