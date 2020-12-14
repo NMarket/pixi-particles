@@ -251,4 +251,5 @@
     // Assign to global space
     window.ParticleExample = ParticleExample;
     window.PartEx = this;
+    window.coinToss = setInterval(function(){ PartEx.emitter.emit = true; }, 300);
 })(window);
