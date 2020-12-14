@@ -215,7 +215,7 @@
                         this.emitter.resetPositionTracking();
 //                         this.emitter.updateOwnerPos(e.offsetX || e.layerX, e.offsetY || e.layerY);
                         this.emitter.updateOwnerPos(window.innerWidth / 2, window.innerHeight / 2);
-                        window.tossCoins();
+                        //window.tossCoins();
                     }
                 });
 
