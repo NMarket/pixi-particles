@@ -79,7 +79,8 @@
                 if(elapsed2 > fpsInterval) {
                     then = now2 - (elapsed2 % fpsInterval);
                     
-                    framerate.innerHTML = `${(1000 / (now - elapsed)).toFixed(2)} fps`;
+//                     framerate.innerHTML = `${(1000 / (now - elapsed)).toFixed(2)} fps`;
+                    framerate.innerHTML = `${(1000 / (now2 - elapsed2)).toFixed(2)} fps`;
                     
                     if(parseInt(this.emitter.particleCount) > 0){
                         // render the stage
