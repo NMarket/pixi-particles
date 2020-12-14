@@ -251,5 +251,18 @@
     // Assign to global space
     window.ParticleExample = ParticleExample;
     window.PartEx = this;
-    window.coinToss = setInterval(function(){ PartEx.emitter.emit = true; }, 300);
+//     window.coinToss = setInterval(function(){ PartEx.emitter.emit = true; }, 300);
+    window.tossCoins = function(){
+        window.iCoin = 0;
+        window.coinToss = setInterval(function(){
+            window.iCoin++;
+            console.log("iCoin: " + window.iCoin);
+            PartEx.emitter.emit = true;
+            if(iCoin >= 50){
+                clearInterval(window.coinToss);
+                window.iCoin = 0;
+            }
+        }, 100);
+    }
+    window.tossCoins();
 })(window);
