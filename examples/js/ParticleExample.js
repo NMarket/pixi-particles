@@ -33,6 +33,7 @@
             this.bg = null;
             this.updateHook = null;
             this.containerHook = null;
+            this.showFrame = true;
 
             const framerate = document.getElementById('framerate');
             const particleCount = document.getElementById('particleCount');
@@ -45,8 +46,11 @@
             // Update function every frame
             const update = () =>
             {
-                // Update the next frame
-                updateId = requestAnimationFrame(update);
+                if(this.showFrame){
+                    // Update the next frame
+                    updateId = requestAnimationFrame(update);
+                }
+                this.showFrame = !this.showFrame;
 
                 const now = Date.now();
                 if (this.emitter)
