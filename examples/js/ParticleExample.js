@@ -67,29 +67,18 @@
                     this.updateHook(now - elapsed);
                 }
 
-
+                framerate.innerHTML = `${(1000 / (now - elapsed)).toFixed(2)} fps`;
+                elapsed = now;
+                
                 if (this.emitter && particleCount)
                 {
                     particleCount.innerHTML = `${this.emitter.particleCount} particles`;
                 }
                 
-                var now2 = Date.now(),
-                    elapsed2 = now2 - then;
-
-                if(elapsed2 > fpsInterval) {
-//                     then = now2 - (elapsed2 % fpsInterval);
-                    then = now2;
-                    
-//                     framerate.innerHTML = `${(1000 / (now - elapsed)).toFixed(2)} fps`;
-                    framerate.innerHTML = `${(1000 / (now2 - elapsed2)).toFixed(2)} fps`;
-                    
-                    if(parseInt(this.emitter.particleCount) > 0){
-                        // render the stage
-                        this.renderer.render(this.stage);
-                    }
+                if(parseInt(this.emitter.particleCount) > 0){
+                    // render the stage
+                    this.renderer.render(this.stage);
                 }
-                
-                elapsed = now;
                 
             };
 
