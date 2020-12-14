@@ -77,7 +77,8 @@
                     elapsed2 = now2 - then;
 
                 if(elapsed2 > fpsInterval) {
-                    then = now2 - (elapsed2 % fpsInterval);
+//                     then = now2 - (elapsed2 % fpsInterval);
+                    then = now2;
                     
 //                     framerate.innerHTML = `${(1000 / (now - elapsed)).toFixed(2)} fps`;
                     framerate.innerHTML = `${(1000 / (now2 - elapsed2)).toFixed(2)} fps`;
