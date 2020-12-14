@@ -46,9 +46,7 @@
             const update = () =>
             {
                 // Update the next frame
-                if(parseInt(this.emitter.particleCount) > 0){
-                    updateId = requestAnimationFrame(update);
-                }
+                updateId = requestAnimationFrame(update);
 
                 const now = Date.now();
                 if (this.emitter)
