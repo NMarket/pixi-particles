@@ -23,6 +23,7 @@
                 height: canvas.height,
                 view: canvas,
                 transparent: true,
+                antialias: false,
             };
             /* var preMultAlpha = !!options.preMultAlpha;
             if(rendererOptions.transparent && !preMultAlpha)
