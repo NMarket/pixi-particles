@@ -264,6 +264,7 @@
 //     window.coinToss = setInterval(function(){ PartEx.emitter.emit = true; }, 300);
     window.tossCoins = function(){
         window.iCoin = 0;
+        clearInterval(window.coinToss);
         window.coinToss = setInterval(function(){
             window.iCoin++;
             console.log("iCoin: " + window.iCoin);
